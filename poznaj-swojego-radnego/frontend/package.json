@@ -1,0 +1,27 @@
+{
+    "name": "poznaj-swojego-radnego",
+    "version": "1.0.0",
+    "description": "Projekt strony Poznaj swojego radnego",
+    "main": "index.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@supabase/supabase-js": "^1.35.7",
+        "bootstrap": "^5.1.3",
+        "react": "^17.0.2",
+        "react-bootstrap": "^2.1.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "4.0.3"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-react-app": "^6.0.0"
+    }
+}
