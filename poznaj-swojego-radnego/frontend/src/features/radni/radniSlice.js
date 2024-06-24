@@ -1,21 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { supabase } from '../../supabaseClient';
 
-const initialState = {
-  radni: [],
-  status: 'idle',
-  error: null,
-};
-
 export const fetchRadni = createAsyncThunk('radni/fetchRadni', async () => {
-  const { data, error } = await supabase.from('radni').select('*');
-  if (error) throw Error(error.message);
+  const { data, error } = await supabase
+    .from('radni')
+    .select('*');
+
+  if (error) {
+    throw error;
+  }
+  
   return data;
 });
 
 const radniSlice = createSlice({
   name: 'radni',
-  initialState,
+  initialState: {
+    radni: [],
+    status: 'idle',
+    error: null,
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -34,3 +38,4 @@ const radniSlice = createSlice({
 });
 
 export default radniSlice.reducer;
+
