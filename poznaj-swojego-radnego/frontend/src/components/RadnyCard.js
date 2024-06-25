@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from'react-router-dom';
 import '../assets/styles/RadnyCard.css'
-import RadnyDetails from '../pages/RadnyDetails';
+// import RadnyDetails from '../pages/RadnyDetails';
 
 const RadnyCard = ({ radny }) => {
   return (

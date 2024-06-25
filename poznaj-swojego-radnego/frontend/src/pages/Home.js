@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; 
 import '../assets/styles/Home.css';
 
 const Home = () => {
@@ -14,37 +15,37 @@ const Home = () => {
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Rada Miasta</Card.Title>
-              <Button variant="primary">Więcej</Button>
+              <Button as={Link} to="/rada-miasta" variant="primary">Więcej</Button>
             </Card.Body>
           </Card>
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Rady Dzielnicy</Card.Title>
-              <Button variant="primary">Więcej</Button>
-            </Card.Body>
+              <Button as={Link} to="/rady-dzielnicy" variant="primary">Więcej</Button>
+              </Card.Body>
           </Card>
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Głosowania</Card.Title>
-              <Button variant="primary">Więcej</Button>
+              <Button as={Link} to="/glosowania" variant="primary">Więcej</Button>
             </Card.Body>
           </Card>
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Interpelacje</Card.Title>
-              <Button variant="primary">Więcej</Button>
+              <Button as={Link} to="/interpelacje" variant="primary">Więcej</Button>
             </Card.Body>
           </Card>
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Oświadczenia</Card.Title>
-              <Button variant="primary">Więcej</Button>
+              <Button as={Link} to="/oswiadczenia" variant="primary">Więcej</Button>
             </Card.Body>
           </Card>
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Kontakt</Card.Title>
-              <Button variant="primary">Więcej</Button>
+              <Button as={Link} to="/kontakt" variant="primary">Więcej</Button>
             </Card.Body>
           </Card>
         </Col>

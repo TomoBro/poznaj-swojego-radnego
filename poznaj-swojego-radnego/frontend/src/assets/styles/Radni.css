@@ -33,3 +33,18 @@
     height: 150px;
     object-fit: cover;
   }
+
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .filter-label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-select {
+    margin-bottom: 1rem;
+  }
+  

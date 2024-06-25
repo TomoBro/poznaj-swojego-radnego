@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRadni } from '../features/radni/radniSlice';
 import RadnyCard from '../components/RadnyCard';
 import '../assets/styles/Radni.css';
+import { Link } from 'react-router-dom';
 
 const Radni = () => {
   const dispatch = useDispatch();
@@ -66,6 +67,9 @@ const Radni = () => {
               <option value="Rada Dzielnicy">Rada Dzielnicy</option>
             </Form.Control>
           </Form.Group>
+        </Col>
+        <Col md={4} className="text-md-end">
+          <Button as={Link} to="/add-radny" variant="primary" className="mt-4">Dodaj radnego</Button>
         </Col>
       </Row>
       <Row className="mt-3">
