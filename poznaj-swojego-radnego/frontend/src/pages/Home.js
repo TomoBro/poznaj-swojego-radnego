@@ -11,9 +11,10 @@ const Home = () => {
           {/* Tu możesz dodać kod dla interaktywnej mapy */}
           <div className="map-placeholder">Mapa Warszawy</div>
         </Col>
-        <Col md={4} className="info-cards">
+    
+        <Col md={4} className="info-cards" class="shadow p-3 mb-5 bg-body-tertiary rounded">
           <Card className="mb-4">
-            <Card.Body>
+            <Card.Body >
               <Card.Title>Rada Miasta</Card.Title>
               <Button as={Link} to="/rada-miasta" variant="primary">Więcej</Button>
             </Card.Body>
@@ -27,7 +28,7 @@ const Home = () => {
           <Card className="mb-4">
             <Card.Body>
               <Card.Title>Głosowania</Card.Title>
-              <Button as={Link} to="/glosowania" variant="primary">Więcej</Button>
+              <button as={Link} to="/glosowania" variant="primary">Więcej</button>
             </Card.Body>
           </Card>
           <Card className="mb-4">

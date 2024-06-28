@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRadni } from '../features/radni/radniSlice';
 import RadnyCard from '../components/RadnyCard';
+import AddRadnyModal from '../components/AddRadnyModal';
 import '../assets/styles/Radni.css';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +14,8 @@ const Radni = () => {
   const error = useSelector((state) => state.radni.error);
 
   const [filter, setFilter] = useState({ party: '', position: '' });
+  const [showModal, setShowModal] = useState(false);
+
 
   useEffect(() => {
     if (radniStatus === 'idle') {
@@ -31,6 +34,10 @@ const Radni = () => {
     );
   });
 
+  const handleRadnyAdded = (newRadny) => {
+    dispatch(fetchRadni()); // refresh the list
+  };
+
   return (
     <Container>
       <Row className="mt-5 filter-container">
@@ -42,7 +49,8 @@ const Radni = () => {
               name="party"
               value={filter.party}
               onChange={handleFilterChange}
-              className="filter-select"
+              class="form-select"
+              aria-label="Default select example"
             >
               <option value="">Wszystkie</option>
               <option value="LEWICA">LEWICA</option>
@@ -60,7 +68,7 @@ const Radni = () => {
               name="position"
               value={filter.position}
               onChange={handleFilterChange}
-              className="filter-select"
+              class="form-select form-select-lg mb-3" aria-label="Large select example"
             >
               <option value="">Wszystkie</option>
               <option value="Rada Miasta">Rada Miasta</option>
@@ -68,8 +76,8 @@ const Radni = () => {
             </Form.Control>
           </Form.Group>
         </Col>
-        <Col md={4} className="text-md-end">
-          <Button as={Link} to="/add-radny" variant="primary" className="mt-4">Dodaj radnego</Button>
+        <Col md={4} className="d-flex align-items-end">
+          <Button variant="primary" onClick={() => setShowModal(true)}>Dodaj radnego</Button>
         </Col>
       </Row>
       <Row className="mt-3">
@@ -81,6 +89,11 @@ const Radni = () => {
           </Col>
         ))}
       </Row>
+      <AddRadnyModal 
+        show={showModal} 
+        handleClose={() => setShowModal(false)} 
+        onRadnyAdded={handleRadnyAdded} 
+      />
     </Container>
   );
 };

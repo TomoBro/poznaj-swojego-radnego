@@ -11,6 +11,7 @@ const AddRadny = () => {
   const [photoUrl, setPhotoUrl] = useState('');
   const [description, setDescription] = useState('');
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error } = await supabase
@@ -20,7 +21,7 @@ const AddRadny = () => {
     if (error) {
       alert('Error adding radny');
     } else {
-      alert('Radny added successfully');
+      alert ('Radny added successfully');
       // Clear form fields
       setFirstName('');
       setLastName('');

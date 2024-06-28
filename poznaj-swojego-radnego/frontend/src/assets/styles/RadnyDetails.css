@@ -34,3 +34,33 @@
   flex: 1 1 calc(33.3333% - 1rem);
   margin-bottom: 1rem;
 }
+
+.side-cards .card {
+  height: 33%; /* Zapewnia równą wysokość dla każdej karty */
+}
+
+.side-cards .flex-fill {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button .btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* .button-delete {
+  margin-right: 1rem;
+} */
+
