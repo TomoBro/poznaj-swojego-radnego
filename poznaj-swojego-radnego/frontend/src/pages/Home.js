@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
 import '../assets/styles/Home.css';
 import mapaWarszawa from '../assets/images/mapa-warszawa.png';
@@ -11,7 +11,7 @@ const Home = () => {
         <Col md={8} className="map-container">
         <img src={mapaWarszawa} alt="Mapa Warszawy" usemap="#mapaWarszawy" className="img-fluid" />
           <map name="mapaWarszawy">
-            <area shape="poly" coords="164,59,205,26,271,8,282,40,365,25,375,50,407,49,419,24,527,13,563,178,535,187,549,235,347,313,267,266,230,227,181,163,189,113,176,87" href="/dzielnica/białołęka" href="/dzielnica/bialoleka" alt="Białołęka" />
+            <area shape="poly" coords="164,59,205,26,271,8,282,40,365,25,375,50,407,49,419,24,527,13,563,178,535,187,549,235,347,313,267,266,230,227,181,163,189,113,176,87" href="/dzielnica/białołęka"alt="Białołęka" />
             <area shape="poly" coords="70,116,105,134,104,159,71,178" href="/dzielnica/bielany" alt="Bielany" />
             <area shape="poly" coords="41,151,71,165,71,191,41,197" href="/dzielnica/bemowo" alt="Bemowo" />
             <area shape="poly" coords="388,304,351,315,390,437,447,505,457,476,522,432,414,384" href="/dzielnica/praga-polnoc" alt="Praga Północ" />
