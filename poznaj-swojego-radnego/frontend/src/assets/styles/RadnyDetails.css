@@ -59,8 +59,16 @@
   align-items: center;
   margin-top: 1rem;
 }
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Odstęp między ikonkami */
+  margin-top: 10px; /* Odstęp od poprzedniego elementu */
+}
 
-/* .button-delete {
-  margin-right: 1rem;
-} */
+.social-icons a {
+  font-size: 1.5rem; /* Zwiększenie rozmiaru ikonek */
+  color: #000; /* Kolor ikonek */
+}
 

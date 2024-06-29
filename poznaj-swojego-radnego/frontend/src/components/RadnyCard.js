@@ -5,7 +5,7 @@ import '../assets/styles/RadnyCard.css'
 
 const RadnyCard = ({ radny }) => {
   return (
-    <Card  class="card mb-4">
+    <Card  class="mb-4">
       <Card.Img variant="top" src={radny.photo_url} alt={radny.last_name}/>
       <Card.Body class='card-body'>
         <Card.Title>{radny.first_name} {radny.last_name}</Card.Title>

@@ -1,5 +1,9 @@
 /* src/App.css */
 body {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,4 +52,13 @@ display: grid;
 
 .navbar-toggler {
   margin-right: auto;
+}
+
+/* Navbar link hover effect */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6347; /* Change this to your desired hover color */
 }

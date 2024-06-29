@@ -32,12 +32,12 @@ const RadnyDetails = () => {
   }, [id]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Zapobiegamy domyślnemu zachowaniu formularza
     const { error } = await supabase
       .from('radni')
       .update(radny)
       .eq('id', id);
-
+  
     if (error) {
       setToastMessage('Błąd podczas zapisywania zmian');
     } else {
@@ -84,12 +84,13 @@ const handleDelete = async () => {
               <Card.Text><strong>Stanowisko:</strong> {radny.position || 'Brak danych'}</Card.Text>
               <Card.Text><strong>Partia:</strong> {radny.party || 'Brak danych'}</Card.Text>
               <Card.Text><strong><FaEnvelope />:</strong> <a href={`mailto:${radny.email}`}>{radny.email || 'Brak danych'}</a></Card.Text>
-              <div>
+              <div className="social-icons">
                 <a href={`https://facebook.com/${radny.facebook}`} target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
                 <a href={`https://twitter.com/${radny.twitter}`} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
                 <a href={`https://linkedin.com/in/${radny.linkedin}`} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               </div>
-              <button class="btn btn-outline-danger btn-sm" onClick={() => setShowModal(true)}>Edytuj</button>
+              
+              <button class="btn btn-outline-danger mt-3" onClick={() => setShowModal(true)}>Edytuj</button>
             </Card.Body>
           </Card>
         </Col>
@@ -120,7 +121,7 @@ const handleDelete = async () => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formFirstName">
+            <Form.Group controlId="formFirstName" className="mb-3">
               <Form.Label>Imię</Form.Label>
               <Form.Control 
                 type="text" 
@@ -131,7 +132,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formLastName">
+            <Form.Group controlId="formLastName" className="mb-3">
               <Form.Label>Nazwisko</Form.Label>
               <Form.Control 
                 type="text" 
@@ -142,7 +143,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formPosition">
+            <Form.Group controlId="formPosition" className="mb-3">
               <Form.Label>Stanowisko</Form.Label>
               <Form.Control 
                 as="select" 
@@ -152,28 +153,28 @@ const handleDelete = async () => {
                 required
               >
                 <option value="Rada Miasta">Rada Miasta</option>
-                <option value="Bemowo">Rada Dzielnicy Bemowo</option>
-                <option value="Białołęka">Rada Dzielnicy Białołęka</option>
-                <option value="Bielany">Rada Dzielnicy Bielany</option>
-                <option value="Mokotów">Rada Dzielnicy Mokotów</option>
-                <option value="Ochota">Rada Dzielnicy Ochota</option>
-                <option value="Praga-Południe">Rada Dzielnicy Praga-Południe</option>
-                <option value="Praga-Północ">Rada Dzielnicy Praga-Północ</option>
-                <option value="Rembertów">Rada Dzielnicy Rembertów</option>
-                <option value="Śródmieście">Rada Dzielnicy Śródmieście</option>
-                <option value="Targówek">Rada Dzielnicy Targówek</option>
-                <option value="Ursus">Rada Dzielnicy Ursus</option>
-                <option value="Ursynów">Rada Dzielnicy Ursynów</option>
-                <option value="Wawer">Rada Dzielnicy Wawer</option>
-                <option value="Wesoła">Rada Dzielnicy Wesoła</option>
-                <option value="Wilanów">Rada Dzielnicy Wilanów</option>
-                <option value="Włochy">Rada Dzielnicy Włochy</option>
-                <option value="Wola">Rada Dzielnicy Wola</option>
-                <option value="Żoliborz">Rada Dzielnicy Żoliborz</option>
+              <option value="Rada Dzielnicy Bemowo">Rada Dzielnicy Bemowo</option>
+              <option value="Rada Dzielnicy Białołęka">Rada Dzielnicy Białołęka</option>
+              <option value="Rada Dzielnicy Bielany">Rada Dzielnicy Bielany</option>
+              <option value="Rada Dzielnicy Mokotów">Rada Dzielnicy Mokotów</option>
+              <option value="Rada Dzielnicy Ochota">Rada Dzielnicy Ochota</option>
+              <option value="Rada Dzielnicy Praga-Południe">Rada Dzielnicy Praga-Południe</option>
+              <option value="Rada Dzielnicy Praga-Północ">Rada Dzielnicy Praga-Północ</option>
+              <option value="Rada Dzielnicy Rembertów">Rada Dzielnicy Rembertów</option>
+              <option value="Rada Dzielnicy Śródmieście">Rada Dzielnicy Śródmieście</option>
+              <option value="Rada Dzielnicy Targówek">Rada Dzielnicy Targówek</option>
+              <option value="Rada Dzielnicy Ursus">Rada Dzielnicy Ursus</option>
+              <option value="Rada Dzielnicy Ursynów">Rada Dzielnicy Ursynów</option>
+              <option value="Rada Dzielnicy Wawer">Rada Dzielnicy Wawer</option>
+              <option value="Rada Dzielnicy Wesoła">Rada Dzielnicy Wesoła</option>
+              <option value="Rada Dzielnicy Wilanów">Rada Dzielnicy Wilanów</option>
+              <option value="Rada Dzielnicy Włochy">Rada Dzielnicy Włochy</option>
+              <option value="Rada Dzielnicy Wola">Rada Dzielnicy Wola</option>
+              <option value="Rada Dzielnicy Żoliborz">Rada Dzielnicy Żoliborz</option>
               </Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="formParty">
+            <Form.Group controlId="formParty" className="mb-3">
               <Form.Label>Partia</Form.Label>
               <Form.Control 
                 type="text" 
@@ -184,7 +185,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formEmail">
+            <Form.Group controlId="formEmail" className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control 
                 type="email" 
@@ -194,7 +195,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formPhotoUrl">
+            <Form.Group controlId="formPhotoUrl" className="mb-3">
               <Form.Label>Link do zdjęcia</Form.Label>
               <Form.Control 
                 type="text" 
@@ -204,7 +205,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formDescription">
+            <Form.Group controlId="formDescription" className="mb-3">
               <Form.Label>Opis</Form.Label>
               <Form.Control 
                 as="textarea" 
@@ -215,7 +216,7 @@ const handleDelete = async () => {
               />
             </Form.Group>
 <div class='button-container'>
-<button type="button" class="btn btn-primary">Zapisz zmiany</button>
+<button type="button" class="btn btn-primary" onClick={handleSubmit}>Zapisz zmiany</button>
 <button type="button" class="btn btn-danger me-md-2 button-delate" onClick={handleDelete}>Usuń radnego</button>
 </div>
     

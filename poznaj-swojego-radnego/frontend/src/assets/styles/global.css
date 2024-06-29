@@ -1,0 +1,25 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #a0c0d6;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px #a0c0d6;
+    border-radius: 10px;
+    background-color: #ffffff; /* Białe tło dla kart */
+  }
+  
+  .card-img-top {
+    background-color: #ffffff; /* Białe tło dla zdjęć w kartach */
+    border-radius: 10px 10px 0 0; /* Dopasowanie border-radius do karty */
+    padding: 10px; /* Dodanie paddingu, aby zapewnić margines wewnętrzny */
+  }
+  
+  .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #a0c0d6; /* Kolor tła na hover */
+    color: #ffffff; /* Kolor tekstu na hover */
+  }

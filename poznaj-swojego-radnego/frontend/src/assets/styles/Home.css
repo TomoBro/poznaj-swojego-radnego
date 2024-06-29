@@ -9,16 +9,20 @@
     align-items: center;
     justify-content: center;
   }
+
+  .map-container img {
+  background-color: #f0f0f0;
+  }
   
   .map-placeholder {
     width: 100%;
     height: 100%;
-    background: #e0e0e0;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: #666;
+    color: #ffffff;
   }
   
   .info-cards {
@@ -34,3 +38,17 @@
     justify-content: space-between;
   }
   
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card-link .card {
+    margin-bottom: 0px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }

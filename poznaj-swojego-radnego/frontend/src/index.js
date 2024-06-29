@@ -6,6 +6,8 @@ import { supabase } from './supabaseClient';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import './assets/styles/global.css';
+
 
 window.supabase = supabase;
 
